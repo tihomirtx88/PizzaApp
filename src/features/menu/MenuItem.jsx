@@ -1,3 +1,5 @@
+import { formatCurrency } from "../../utilites/helpers";
+
 export default function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
