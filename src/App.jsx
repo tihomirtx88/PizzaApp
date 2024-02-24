@@ -1,6 +1,6 @@
 import "./index.css";
 import Home from "./ui/Home";
-import Menu, {Loader as menuLoader} from "./features/menu/Menu";
+import Menu, {loader as menuLoader} from "./features/menu/Menu";
 import Cart from "./features/cart/Cart";
 import Error from "./ui/Error";
 import CreateOrder, { action as createOrderAction} from "./features/order/CreateOrder";
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     errorElement: <Error/>,
     children: [
-      { ath: "/", element: <Home /> },
+      { path: "/", element: <Home /> },
       { path: "/menu", element: <Menu />, loader: menuLoader, errorElement: <Error/> },
       { path: "/cart", element: <Cart /> },
       { path: "/order/new", element: <CreateOrder />, action: createOrderAction },
