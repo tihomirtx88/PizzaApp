@@ -44,7 +44,7 @@ export default function Order() {
 
       <ul className="divide-y dive-stone-200 border-b border-t">
         {cart.map((item) => (
-          <OrderItem key={item.id} item={item}/>
+          <OrderItem  key={item.pizzaId} item={item}/>
         ))}
       </ul>
 
