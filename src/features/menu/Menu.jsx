@@ -1,9 +1,10 @@
-import { useLoaderData } from "react-router-dom";
-import { getMenu } from "./../../services/apiRestaurant";
-import MenuItem from "./MenuItem";
+import { useLoaderData } from 'react-router-dom';
+import { getMenu } from '../../services/apiRestaurant';
+import MenuItem from './MenuItem';
 
-function Menu() {
+export default function Menu() {
   const menu = useLoaderData();
+
   return (
     <ul className="divide-y divide-stone-200 px-2">
       {menu.map((pizza) => (
@@ -18,4 +19,4 @@ export async function loader() {
   return menu;
 }
 
-export default Menu;
+
