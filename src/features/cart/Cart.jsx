@@ -1,13 +1,17 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LinkButton from "../../ui/LinkButton";
 import Button from "./../../ui/Button";
 import CartItem from "./CartItem";
-import { getCart } from "./cartSlice";
+import { clearCart, getCart } from "./cartSlice";
+import EmptyCart from "./EmptyCart";
 
 export default function Cart() {
   const cart = useSelector(getCart);
   const username = useSelector((state) => state.user.username);
-
+  console.log(cart);
+  const dispatch = useDispatch();
+  
+  if(!cart.length) return <EmptyCart/>;
 
   return (
     <div className="px-4 py-3 ">
@@ -17,7 +21,7 @@ export default function Cart() {
 
       <ul className="mt-3 divide-y divide-stone-200 border-b ">
         {cart.map((item) => (
-          <CartItem item={item} key={item.key} />
+          <CartItem item={item} key={item.pizzaId} />
         ))}
       </ul>
 
@@ -25,7 +29,7 @@ export default function Cart() {
         <Button type="primary" to="/order/new">
           Order pizzas
         </Button>
-        <button>Clear cart</button>
+        <Button type="secondary" onClick={()=> dispatch(clearCart())}>Clear cart</Button>
       </div>
     </div>
   );
