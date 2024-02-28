@@ -59,6 +59,6 @@ export default function Order() {
 
 export async function loader({params}) {
 
-  const order = await getOrder(params.order.id);
+  const order = await getOrder(params.orderId);
   return order;
 }

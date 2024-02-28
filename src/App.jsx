@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { path: "/menu", element: <Menu />, loader: menuLoader, errorElement: <Error/> },
       { path: "/cart", element: <Cart /> },
       { path: "/order/new", element: <CreateOrder />, action: createOrderAction },
-      { path: "/order/:order", element: <Order />, loader: orderLoader,  errorElement: <Error/> },
+      { path: "/order/:orderId", element: <Order />, loader: orderLoader,  errorElement: <Error/> },
     ],
   },
 ]);
