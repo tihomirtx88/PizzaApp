@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const items = localStorage.getItem('addItems') !== null ? JSON.parse(localStorage.getItem('addItems')) : [];
+
 const initialState = {
-  cart: [],
+  cart: items,
 };
 
 const cartSlice = createSlice({
@@ -11,6 +13,7 @@ const cartSlice = createSlice({
     addItem(state, action) {
       // payload = newItem
       state.cart.push(action.payload);
+      localStorage.setItem("addItems", JSON.stringify(state.cart.map((item) => item)));
     },
     deleteItem(state, action) {
       // payload = pizzaId
@@ -29,7 +32,7 @@ const cartSlice = createSlice({
 
       item.quantity--;
       item.totalPrice = item.quantity * item.unitPrice;
-      
+
       // Prevent to use deleteIem Code again
       if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action);
     },
@@ -61,4 +64,3 @@ export const getTotalCartPrice = (state) =>
 
 export const getCurrentQuantityById = (id) => (state) =>
   state.cart.cart.find((item) => item.pizzaId === id)?.quantity ?? 0;
-
