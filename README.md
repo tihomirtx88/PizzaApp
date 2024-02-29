@@ -1,8 +1,8 @@
 # Fast React Pizza Co
 
-The idea behind this application is to order food for Pizza Delivery Company. Here you can choice and order your favorite kind of pizza,
-with favorite ingrediants. Part of features are two kind of delivery - priority (with discount of price) and normal,also 
-you can add, delete pizza from menu. If you already order pizza, still you can change priority status with update order.
+The idea behind this application is to order food for Pizza Delivery Company. Here you can choise and order your favorite kind of pizza,
+with favorite ingredients. Part of features are two kind of delivery - priority (with discount of price) and normal ,also 
+you can add, delete pizza from menu or change qunatity and all this will change the price. If you already order pizza, still you can change priority status with update order.
 
 [Here.](https://github.com/tihomirtx88/PizzaApp) you can find the repository.
 
